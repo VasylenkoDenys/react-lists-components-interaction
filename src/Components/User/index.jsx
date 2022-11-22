@@ -10,7 +10,7 @@ class User extends React.Component {
         <p>First name: {firstName}</p>
         <p>Last name: {lastName}</p>
         <p>Likes: {likes}</p>
-        <button className="btn" onClick={()=>userLiker(id)} disabled={isLiked}>
+        <button className="btn" onClick={()=>userLiker(id)} hidden={isLiked}>
           like
         </button>
         <button className="btn" onClick={()=>deleteUser(id)}>
