@@ -26,18 +26,23 @@ class UsersList extends Component {
       <User
         firstName={user.firstName}
         lastName={user.lastName}
+        id={user.id}
         key={user.id}
         likes={user.likes}
+        isLiked={user.isLiked}
+        userLiker = {this.userLiker}
+        deleteUser = {this.deleteUser}
       />
     );
   };
   
-  liker=(id)=> {
-    this.setSate({
+  userLiker=(id)=> {
+    this.setState({
       users: this.state.users.map((user)=>{
         return {
           ...user,
-          likes: id === user.id ? user.likes +1 : user.likes,
+          likes: id===user.id ? user.likes +1 : user.likes,
+          isLiked: id===user.id ? true: user.isLiked,
         };
       }),
     });

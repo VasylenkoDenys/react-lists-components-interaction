@@ -2,7 +2,7 @@ import React from "react";
 
 class User extends React.Component {
   render() {
-    const {id, firstName, lastName, likes, isLiked, liker, deleteUser } =
+    const {id, firstName, lastName, likes, isLiked, userLiker, deleteUser } =
       this.props;
     return (
       <div className="userCard">
@@ -10,7 +10,7 @@ class User extends React.Component {
         <p>First name: {firstName}</p>
         <p>Last name: {lastName}</p>
         <p>Likes: {likes}</p>
-        <button className="btn" onClick={()=>liker(id)} hidden={isLiked}>
+        <button className="btn" onClick={()=>userLiker(id)} disabled={isLiked}>
           like
         </button>
         <button className="btn" onClick={()=>deleteUser(id)}>
